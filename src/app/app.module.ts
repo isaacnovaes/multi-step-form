@@ -5,22 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
-import {
-    provideRouter,
-    Routes,
-    withComponentInputBinding,
-} from '@angular/router';
-
-const routes: Routes = [
-    { path: 'first', title: 'First route', component: FirstComponent },
-    { path: 'second', title: 'Second route', component: SecondComponent },
-    { path: '**', redirectTo: 'first', pathMatch: 'full' },
-];
+import { StepInformationComponent } from './step-information/step-information.component';
+import { FormContainerComponent } from './form-container/form-container.component';
+import { FormHeaderComponent } from './form-container/form-header/form-header.component';
+import { FormFooterComponent } from './form-container/form-footer/form-footer.component';
 
 @NgModule({
-    declarations: [AppComponent, FirstComponent, SecondComponent],
+    declarations: [AppComponent, FirstComponent, SecondComponent, StepInformationComponent, FormContainerComponent, FormHeaderComponent, FormFooterComponent],
     imports: [BrowserModule, AppRoutingModule],
-    providers: [provideRouter(routes, withComponentInputBinding())],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

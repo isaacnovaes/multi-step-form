@@ -1,22 +1,9 @@
-<div>
-    <h1>Routing test</h1>
-    <nav>
-        <li>
-            <a
-                [routerLink]="['second']"
-                routerLinkActive="active"
-                ariaCurrentWhenActive="page"
-                >Go to second</a
-            >
-        </li>
-        <li>
-            <a
-                [routerLink]="['first']"
-                routerLinkActive="active"
-                ariaCurrentWhenActive="page"
-                >Go to first</a
-            >
-        </li>
-    </nav>
-    <router-outlet></router-outlet>
+<div class="app">
+    <div class="app__mobile-bg"></div>
+    <div class="app__container">
+        <step-information></step-information>
+        <form-container>
+            <router-outlet></router-outlet>
+        </form-container>
+    </div>
 </div>

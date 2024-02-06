@@ -1,0 +1,19 @@
+.app {
+    height: 100dvh;
+    background-color: #edf4fe;
+    position: relative;
+
+    &__mobile-bg {
+        width: 100%;
+        height: 172px;
+        background-image: url('/assets/images/bg-sidebar-mobile.svg');
+        background-size: cover;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__container {
+        position: relative;
+        z-index: 2;
+    }
+}
