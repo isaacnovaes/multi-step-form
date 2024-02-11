@@ -1,33 +1,23 @@
 :root {
-  box-sizing: border-box;
-  line-height: 1.5;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 
-  --marine-blue: hsl(213deg, 96%, 18%);
-  --purplish-blue: hsl(243deg, 100%, 62%);
-  --pastel-blue: hsl(228deg, 100%, 84%);
-  --light-blue: hsl(206deg, 94%, 87%);
-  --strawberry-red: hsl(354deg, 84%, 57%);
-  --cool-gray: hsl(231deg, 11%, 63%);
-  --light-gray: hsl(229deg, 24%, 87%);
-  --magnolia: hsl(217deg, 100%, 97%);
-  --alabaster: hsl(231deg, 100%, 99%);
-  --white: hsl(0deg, 0%, 100%);
-  --small-font: 400;
-  --medium-font: 500;
-  --big-font: 700;
+    --small-font: 400;
+    --medium-font: 500;
+    --big-font: 700;
 }
 
 /* set core root defaults */
 html:focus-within {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /**
@@ -39,25 +29,25 @@ html:focus-within {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  font-family: var(--font-family);
-  font-weight: var(--small-font);
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: var(--font-family);
+    font-weight: var(--small-font);
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 /* Remove the border on images inside links in IE 10. */
 img {
-  border-style: none;
+    border-style: none;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /**
@@ -67,26 +57,26 @@ a {
 button,
 input,
 textarea {
-  appearance: none;
+    appearance: none;
 }
 
 button:focus,
 button:focus-visible {
-  outline: calc(4rem / 16) auto -webkit-focus-ring-color;
+    outline: calc(4rem / 16) auto -webkit-focus-ring-color;
 }
 
 /* Remove all animations, transitions, and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
+    html:focus-within {
+        scroll-behavior: auto;
+    }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
