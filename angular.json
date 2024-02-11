@@ -9,11 +9,13 @@
                 "@schematics/angular:component": {
                     "style": "scss",
                     "standalone": false,
-                    "skipTests": true
+                    "skipTests": true,
+                    "prefix": ""
                 },
                 "@schematics/angular:directive": {
                     "standalone": false,
-                    "skipTests": true
+                    "skipTests": true,
+                    "prefix": ""
                 },
                 "@schematics/angular:pipe": {
                     "standalone": false,
@@ -100,6 +102,7 @@
         }
     },
     "cli": {
-        "schematicCollections": ["@angular-eslint/schematics"]
+        "schematicCollections": ["@angular-eslint/schematics"],
+        "analytics": false
     }
 }
