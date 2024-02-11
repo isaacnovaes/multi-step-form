@@ -1,0 +1,7 @@
+<div class="step-information">
+    @for (step of STEPS; track $index) {
+        <div class="step" [class.selected]="step === currentStep">
+            <span>{{ step }}</span>
+        </div>
+    }
+</div>

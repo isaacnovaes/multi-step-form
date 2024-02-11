@@ -1,0 +1,27 @@
+.step-information {
+    --step-size: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    width: 40dvw;
+    margin-inline: auto;
+    padding-block: var(--step-size);
+
+    .step {
+        display: grid;
+        place-items: center;
+        width: var(--step-size);
+        height: var(--step-size);
+        border-radius: 50%;
+        border: 1px solid #f4f7ff;
+        color: #f4f7ff;
+        transition: 300ms all ease-in-out;
+    }
+
+    .selected {
+        border-color: #bbddf6;
+        background-color: #bbddf6;
+        color: #0c3553;
+    }
+}
