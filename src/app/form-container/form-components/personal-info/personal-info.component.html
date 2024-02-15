@@ -1,31 +1,72 @@
 <form [formGroup]="personalInfoForm" class="personal-info">
     <div class="control-container">
-        <label for="name">Name</label>
+        <div class="input-description">
+            <label for="name">Name</label>
+            <ng-container
+                *ngIf="
+                    getNameControl.touched && getNameControl.errors as nameError
+                "
+            >
+                <span *ngIf="nameError['required']" class="error"
+                    >Required</span
+                >
+            </ng-container>
+        </div>
         <input
             type="text"
             id="name"
             placeholder="e.g. Stephen King"
             [formControlName]="PersonalInfoControls.Name"
+            [class.valid]="getNameControl.valid"
         />
     </div>
     <div class="control-container">
-        <label for="email">Email Address</label>
+        <div class="input-description">
+            <label for="email">Email Address</label>
+            <ng-container
+                *ngIf="
+                    getEmailControl.touched &&
+                    getEmailControl.errors as emailError
+                "
+            >
+                <span *ngIf="emailError['required']" class="error"
+                    >Required</span
+                >
+                <span *ngIf="emailError['email']" class="error"
+                    >Wrong email</span
+                >
+            </ng-container>
+        </div>
         <input
             type="email"
             id="email"
             placeholder="e.g. stephenking@lorem.com"
+            [class.valid]="getEmailControl.valid"
             [formControlName]="PersonalInfoControls.Email"
         />
-        <span class="error">Wrong email</span>
     </div>
     <div class="control-container">
-        <label for="phone">Phone Number</label>
+        <div class="input-description">
+            <label for="phone">Phone Number</label>
+            <ng-container
+                *ngIf="
+                    getPhoneControl.touched &&
+                    getPhoneControl.errors as phoneError
+                "
+            >
+                <span *ngIf="phoneError['required']" class="error"
+                    >Required</span
+                >
+            </ng-container>
+        </div>
         <input
             type="tel"
             id="phone"
             placeholder="e.g. +1 234 567 890"
+            [class.valid]="getPhoneControl.valid"
             [formControlName]="PersonalInfoControls.Phone"
         />
     </div>
+    <button (click)="check()">check form</button>
     <form-footer></form-footer>
 </form>

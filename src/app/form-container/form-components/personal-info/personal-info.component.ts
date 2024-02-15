@@ -22,4 +22,24 @@ export class PersonalInfoComponent {
         [PersonalInfoControls.Phone]: new FormControl('', Validators.required),
     });
     protected readonly PersonalInfoControls = PersonalInfoControls;
+
+    check(): void {
+        debugger;
+    }
+
+    get getNameControl(): FormControl<string> {
+        return this.personalInfoForm.get(
+            PersonalInfoControls.Name,
+        ) as FormControl<string>;
+    }
+    get getEmailControl(): FormControl<string> {
+        return this.personalInfoForm.get(
+            PersonalInfoControls.Email,
+        ) as FormControl<string>;
+    }
+    get getPhoneControl(): FormControl<string> {
+        return this.personalInfoForm.get(
+            PersonalInfoControls.Phone,
+        ) as FormControl<string>;
+    }
 }

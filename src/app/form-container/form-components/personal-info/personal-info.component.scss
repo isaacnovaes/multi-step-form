@@ -7,20 +7,41 @@
         display: flex;
         flex-direction: column;
 
-        > label {
-            color: #3b5065;
-            font-size: 0.8rem;
-            font-weight: var(--medium-font);
+        .input-description {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            > label {
+                color: #3b5065;
+                font-size: 0.8rem;
+                font-weight: var(--medium-font);
+            }
+
+            .error {
+                font-size: 0.8rem;
+                font-weight: var(--medium-font);
+                color: red;
+            }
         }
 
         > input {
             border: 1px solid #97969c;
             border-radius: 5px;
             padding: 8px 15px;
+
+            &:hover {
+                border-color: #918dbc;
+                cursor: pointer;
+            }
+
+            &.valid {
+                border-color: green;
+            }
         }
 
-      > input:has(+ span.error) {
-        border-color: red;
-      }
+        .input-description:has(.error) + input {
+            border-color: red;
+        }
     }
 }
