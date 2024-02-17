@@ -6,6 +6,7 @@ import { PersonalInfoComponent } from './form-container/form-components/personal
 import { PlanSelectionComponent } from './form-container/form-components/plan-selection/plan-selection.component';
 import { PickAddonsComponent } from './form-container/form-components/pick-addons/pick-addons.component';
 import { SummaryComponent } from './form-container/form-components/summary/summary.component';
+import { INITIAL_ROUTE } from './shared/constants';
 
 export const routes: Routes = [
     {
@@ -28,7 +29,7 @@ export const routes: Routes = [
         title: 'Summary',
         component: SummaryComponent,
     },
-    { path: '', redirectTo: 'personal-info', pathMatch: 'full' },
+    { path: '', redirectTo: INITIAL_ROUTE, pathMatch: 'full' },
     { path: '**', title: 'Page not found', component: SecondComponent },
 ];
 
