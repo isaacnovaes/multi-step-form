@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { StepInformationComponent } from './step-information/step-information.component';
 import { FormContainerComponent } from './form-container/form-container.component';
@@ -18,7 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     declarations: [
         AppComponent,
-        FirstComponent,
         SecondComponent,
         StepInformationComponent,
         FormContainerComponent,

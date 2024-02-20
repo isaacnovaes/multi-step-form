@@ -15,7 +15,7 @@ export class RouteUtils {
         return urlToStep[url] ?? INITIAL_STEP;
     }
 
-    isRoutePath(path: string): path is RoutePath {
+    isRoutePath(path?: string): path is RoutePath {
         return Object.values(RoutePath).includes(path as RoutePath);
     }
 
