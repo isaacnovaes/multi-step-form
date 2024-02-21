@@ -1,0 +1,39 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100dvw;
+    padding-inline: 2.5dvw;
+    padding-block: 15px 20px;
+    background-color: #ffffff;
+
+    .back,
+    .next {
+        font-weight: var(--medium-font);
+        font-size: 0.9rem;
+        border-width: 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .back {
+        color: #a4a4ac;
+        background-color: transparent;
+    }
+
+    .next {
+        color: #fff;
+        background-color: #001e45;
+        border-radius: 4px;
+        padding: 10px 15px;
+    }
+
+    .hide {
+        visibility: hidden;
+    }
+}
