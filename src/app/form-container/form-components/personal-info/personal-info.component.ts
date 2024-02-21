@@ -50,7 +50,6 @@ export class PersonalInfoComponent implements OnInit, OnDestroy {
 
     next(): void {
         if (this.personalInfoForm.invalid) {
-            debugger;
             this.personalInfoForm.markAllAsTouched();
             return;
         }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RoutePath } from '../../shared/global.defs';
-import { Location } from '@angular/common';
 import { RouteUtils } from '../../shared/route-utils';
+import { filter, map, Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 interface HeadingDetails {
     heading: string;
@@ -33,17 +34,31 @@ const routeToHeadingDetails: Record<RoutePath, HeadingDetails> = {
     templateUrl: './form-header.component.html',
     styleUrl: './form-header.component.scss',
 })
-export class FormHeaderComponent implements OnInit {
+export class FormHeaderComponent implements OnInit, OnDestroy {
     headingDetails: HeadingDetails | undefined = undefined;
 
+    urlSubscription: Subscription | undefined = undefined;
+
     constructor(
-        private readonly location: Location,
+        private readonly route: ActivatedRoute,
         private readonly routeUtils: RouteUtils,
     ) {}
+
     ngOnInit(): void {
-        const path = this.location.normalize(this.location.path()).slice(1);
-        if (this.routeUtils.isRoutePath(path)) {
-            this.headingDetails = routeToHeadingDetails[path];
-        }
+        this.urlSubscription = this.route.url
+            .pipe(
+                map((url) => {
+                    const path = url.at(0)?.path;
+                    return this.routeUtils.isRoutePath(path) ? path : null;
+                }),
+                filter((p): p is RoutePath => Boolean(p)),
+            )
+            .subscribe((currentPath) => {
+                this.headingDetails = routeToHeadingDetails[currentPath];
+            });
+    }
+
+    ngOnDestroy(): void {
+        this.urlSubscription?.unsubscribe();
     }
 }
