@@ -43,9 +43,3 @@ testem.log
 Thumbs.db
 
 .editorconfig/
-
-# temporarily
-design
-README-skelleton.md
-README-template.md
-style-guide.md
