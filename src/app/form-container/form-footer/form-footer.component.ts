@@ -5,10 +5,10 @@ import {
     OnInit,
     Output,
 } from '@angular/core';
-import { RoutePath } from '../../shared/global.defs';
-import { filter, map, Subscription } from 'rxjs';
-import { RouteUtils } from '../../shared/route-utils';
+import { Subscription, filter, map } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { RoutePath } from '../../shared/global.defs';
+import { RouteUtils } from '../../shared/route-utils';
 
 @Component({
     selector: 'form-footer',

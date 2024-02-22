@@ -1,6 +1,6 @@
-import { RoutePath } from './global.defs';
 import { INITIAL_STEP } from './constants';
 import { Injectable } from '@angular/core';
+import { RoutePath } from './global.defs';
 
 @Injectable({ providedIn: 'root' })
 export class RouteUtils {

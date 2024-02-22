@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PersonalInfo, PersonalInfoService } from './personal-info.service';
-import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
 import { RoutePath } from '../../../shared/global.defs';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 enum PersonalInfoControls {
     Name = 'name',

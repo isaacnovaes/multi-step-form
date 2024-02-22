@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SecondComponent } from './second/second.component';
-import { RoutePath } from './shared/global.defs';
-import { PersonalInfoComponent } from './form-container/form-components/personal-info/personal-info.component';
-import { PlanSelectionComponent } from './form-container/form-components/plan-selection/plan-selection.component';
-import { PickAddonsComponent } from './form-container/form-components/pick-addons/pick-addons.component';
-import { SummaryComponent } from './form-container/form-components/summary/summary.component';
 import { INITIAL_ROUTE } from './shared/constants';
+import { NgModule } from '@angular/core';
+import { PersonalInfoComponent } from './form-container/form-components/personal-info/personal-info.component';
+import { PickAddonsComponent } from './form-container/form-components/pick-addons/pick-addons.component';
+import { PlanSelectionComponent } from './form-container/form-components/plan-selection/plan-selection.component';
+import { RoutePath } from './shared/global.defs';
+import { SecondComponent } from './second/second.component';
+import { SummaryComponent } from './form-container/form-components/summary/summary.component';
 
 export const routes: Routes = [
     {

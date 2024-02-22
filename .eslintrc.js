@@ -37,6 +37,7 @@ module.exports = {
                         style: 'kebab-case',
                     },
                 ],
+                'sort-imports': 'warn',
                 '@typescript-eslint/unbound-method': [
                     'error',
                     {

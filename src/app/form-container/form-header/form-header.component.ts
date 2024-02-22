@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription, filter, map } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { RoutePath } from '../../shared/global.defs';
 import { RouteUtils } from '../../shared/route-utils';
-import { filter, map, Subscription } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
 
 interface HeadingDetails {
     heading: string;
