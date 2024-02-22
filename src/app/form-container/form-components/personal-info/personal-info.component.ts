@@ -39,13 +39,13 @@ export class PersonalInfoComponent implements OnInit, OnDestroy {
     ) {}
     ngOnInit(): void {
         this.personalInfoServiceSubscription =
-            this.personalInfoService.personalInfo$
-                .pipe()
-                .subscribe((personalInfo: PersonalInfo | null) => {
+            this.personalInfoService.personalInfo$.subscribe(
+                (personalInfo: PersonalInfo | null) => {
                     if (personalInfo) {
                         this.personalInfoForm.patchValue(personalInfo);
                     }
-                });
+                },
+            );
     }
 
     next(): void {
