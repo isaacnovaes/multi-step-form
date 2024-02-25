@@ -1,6 +1,7 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { DisplayPricePipe } from './form-container/form-components/summary/display-price.pipe';
 import { FormContainerComponent } from './form-container/form-container.component';
 import { FormFooterComponent } from './form-container/form-footer/form-footer.component';
 import { FormHeaderComponent } from './form-container/form-header/form-header.component';
@@ -25,6 +26,7 @@ import { SummaryComponent } from './form-container/form-components/summary/summa
         PlanSelectionComponent,
         PickAddonsComponent,
         SummaryComponent,
+        DisplayPricePipe,
     ],
     imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
     bootstrap: [AppComponent],
