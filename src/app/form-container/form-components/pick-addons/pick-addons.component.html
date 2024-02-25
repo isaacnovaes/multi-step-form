@@ -1,6 +1,64 @@
 <step-information></step-information>
 <form-container>
     <form-header></form-header>
-    <p>pick-addons works!</p>
+    <form [formGroup]="pickAddonsForm">
+        <div class="checkbox-container">
+            <input
+                type="checkbox"
+                [name]="PickAddonsFormControls.OnlineService"
+                [id]="PickAddonsFormControls.OnlineService"
+                [value]="PickAddonsFormControls.OnlineService"
+                [formControlName]="PickAddonsFormControls.OnlineService"
+            />
+            <div class="input-checkbox-image"></div>
+            <div class="checkbox-description">
+                <label [for]="PickAddonsFormControls.OnlineService"
+                    >Online service</label
+                >
+                <h3>Access to multiplayer games</h3>
+            </div>
+            <div class="addon-price">
+                {{ isMonthly ? '+$1/mo' : '+$10/yr' }}
+            </div>
+        </div>
+        <div class="checkbox-container">
+            <input
+                type="checkbox"
+                [name]="PickAddonsFormControls.LargeStorage"
+                [id]="PickAddonsFormControls.LargeStorage"
+                [value]="PickAddonsFormControls.LargeStorage"
+                [formControlName]="PickAddonsFormControls.LargeStorage"
+            />
+            <div class="input-checkbox-image"></div>
+            <div class="checkbox-description">
+                <label [for]="PickAddonsFormControls.LargeStorage"
+                    >Larger storage</label
+                >
+                <h3>Extra 1TB of cloud save</h3>
+            </div>
+            <div class="addon-price">
+                {{ isMonthly ? '+$2/mo' : '+$20/yr' }}
+            </div>
+        </div>
+        <div class="checkbox-container">
+            <input
+                type="checkbox"
+                [name]="PickAddonsFormControls.CustomizableProfile"
+                [id]="PickAddonsFormControls.CustomizableProfile"
+                [value]="PickAddonsFormControls.CustomizableProfile"
+                [formControlName]="PickAddonsFormControls.CustomizableProfile"
+            />
+            <div class="input-checkbox-image"></div>
+            <div class="checkbox-description">
+                <label [for]="PickAddonsFormControls.CustomizableProfile"
+                    >Customizable profile</label
+                >
+                <h3>Custom theme on your profile</h3>
+            </div>
+            <div class="addon-price">
+                {{ isMonthly ? '+$2/mo' : '+$20/yr' }}
+            </div>
+        </div>
+    </form>
     <form-footer (back)="back()" (next)="next()"></form-footer>
 </form-container>
