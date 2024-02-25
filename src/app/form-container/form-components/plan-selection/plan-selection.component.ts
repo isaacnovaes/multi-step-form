@@ -1,13 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {
-    PlanSelection,
     PlanSelectionService,
     PlanSelectionValues,
 } from './plan-selection.service';
 import { RoutePath } from '../../../shared/global.defs';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 enum PlanSelectionControls {
     Plan = 'plan',
@@ -19,7 +17,7 @@ enum PlanSelectionControls {
     templateUrl: './plan-selection.component.html',
     styleUrl: './plan-selection.component.scss',
 })
-export class PlanSelectionComponent implements OnInit, OnDestroy {
+export class PlanSelectionComponent implements OnInit {
     planSelectionForm = new FormGroup({
         [PlanSelectionControls.Plan]: new FormControl(
             PlanSelectionValues.Arcade,
@@ -31,8 +29,6 @@ export class PlanSelectionComponent implements OnInit, OnDestroy {
     });
 
     isMonthly = true;
-
-    planSelectionServiceSubscription: Subscription | undefined;
 
     protected readonly PlanSelectionValues = PlanSelectionValues;
 
@@ -49,29 +45,29 @@ export class PlanSelectionComponent implements OnInit, OnDestroy {
             ?.valueChanges.subscribe((isMonthly: boolean) => {
                 this.isMonthly = isMonthly;
             });
-        this.planSelectionServiceSubscription =
-            this.planSelectionService.planSelection$.subscribe(
-                (planSelection: PlanSelection | null) => {
-                    if (planSelection) {
-                        this.planSelectionForm.patchValue(planSelection);
-                    }
-                },
-            );
+        const planSelectionFromLocalStorage =
+            this.planSelectionService.planSelection$.value;
+        if (planSelectionFromLocalStorage) {
+            this.planSelectionForm.patchValue(planSelectionFromLocalStorage);
+        }
     }
 
     back(): void {
+        this.savePlan();
         this.router.navigate([RoutePath.personalInfo]);
     }
 
     next(): void {
-        const { plan, monthly } = this.planSelectionForm.value;
-        if (plan !== undefined && monthly !== undefined) {
-            this.planSelectionService.addPlanSelection({ plan, monthly });
+        if (this.planSelectionForm.valid) {
+            this.savePlan();
             this.router.navigate([RoutePath.pickAddons]);
         }
     }
 
-    ngOnDestroy(): void {
-        this.planSelectionServiceSubscription?.unsubscribe();
+    private savePlan(): void {
+        const { plan, monthly } = this.planSelectionForm.value;
+        if (plan !== undefined && monthly !== undefined) {
+            this.planSelectionService.addPlanSelection({ plan, monthly });
+        }
     }
 }
