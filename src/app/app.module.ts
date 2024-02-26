@@ -10,14 +10,13 @@ import { PersonalInfoComponent } from './form-container/form-components/personal
 import { PickAddonsComponent } from './form-container/form-components/pick-addons/pick-addons.component';
 import { PlanSelectionComponent } from './form-container/form-components/plan-selection/plan-selection.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SecondComponent } from './second/second.component';
 import { StepInformationComponent } from './step-information/step-information.component';
+import { SuccessComponent } from './success/success.component';
 import { SummaryComponent } from './form-container/form-components/summary/summary.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        SecondComponent,
         StepInformationComponent,
         FormContainerComponent,
         FormHeaderComponent,
@@ -27,6 +26,7 @@ import { SummaryComponent } from './form-container/form-components/summary/summa
         PickAddonsComponent,
         SummaryComponent,
         DisplayPricePipe,
+        SuccessComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
     bootstrap: [AppComponent],
