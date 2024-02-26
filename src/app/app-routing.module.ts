@@ -5,32 +5,39 @@ import { PersonalInfoComponent } from './form-container/form-components/personal
 import { PickAddonsComponent } from './form-container/form-components/pick-addons/pick-addons.component';
 import { PlanSelectionComponent } from './form-container/form-components/plan-selection/plan-selection.component';
 import { RoutePath } from './shared/global.defs';
-import { SecondComponent } from './second/second.component';
+import { SuccessComponent } from './success/success.component';
+import { SuccessGuard } from './shared/success.guard';
 import { SummaryComponent } from './form-container/form-components/summary/summary.component';
 
 export const routes: Routes = [
     {
-        path: RoutePath.personalInfo,
+        path: RoutePath.PersonalInfo,
         title: 'Personal info',
         component: PersonalInfoComponent,
     },
     {
-        path: RoutePath.planSelection,
+        path: RoutePath.PlanSelection,
         title: 'Plan selection',
         component: PlanSelectionComponent,
     },
     {
-        path: RoutePath.pickAddons,
+        path: RoutePath.PickAddons,
         title: 'Pick addons',
         component: PickAddonsComponent,
     },
     {
-        path: RoutePath.summary,
+        path: RoutePath.Summary,
         title: 'Summary',
         component: SummaryComponent,
     },
+    {
+        path: 'success',
+        title: 'Success',
+        component: SuccessComponent,
+        canActivate: [SuccessGuard],
+    },
     { path: '', redirectTo: INITIAL_ROUTE, pathMatch: 'full' },
-    { path: '**', title: 'Page not found', component: SecondComponent },
+    { path: '**', title: 'Page not found', component: SuccessComponent },
 ];
 
 @NgModule({

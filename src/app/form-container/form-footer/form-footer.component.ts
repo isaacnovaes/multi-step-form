@@ -28,6 +28,8 @@ export class FormFooterComponent implements OnInit, OnDestroy {
 
     currentStep: number | undefined = undefined;
 
+    isConfirm = false;
+
     constructor(
         private readonly routeUtils: RouteUtils,
         private readonly route: ActivatedRoute,
@@ -42,9 +44,10 @@ export class FormFooterComponent implements OnInit, OnDestroy {
                 }),
                 filter((p): p is RoutePath => Boolean(p)),
             )
-            .subscribe((path) => {
+            .subscribe((path: RoutePath) => {
                 this.currentStep = this.routeUtils.getCurrentStep(path);
-                this.hideBackButton = path === RoutePath.personalInfo;
+                this.isConfirm = this.currentStep === 4;
+                this.hideBackButton = path === RoutePath.PersonalInfo;
             });
     }
 

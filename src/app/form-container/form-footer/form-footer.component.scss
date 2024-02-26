@@ -36,6 +36,10 @@
         background-color: #001e45;
         border-radius: 4px;
         padding: 10px 15px;
+
+        &.confirm {
+            background-color: #483eff;
+        }
     }
 
     .hide {

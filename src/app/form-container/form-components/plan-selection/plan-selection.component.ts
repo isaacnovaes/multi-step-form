@@ -54,13 +54,13 @@ export class PlanSelectionComponent implements OnInit {
 
     back(): void {
         this.savePlan();
-        this.router.navigate([RoutePath.personalInfo]);
+        this.router.navigate([RoutePath.PersonalInfo]);
     }
 
     next(): void {
         if (this.planSelectionForm.valid) {
             this.savePlan();
-            this.router.navigate([RoutePath.pickAddons]);
+            this.router.navigate([RoutePath.PickAddons]);
         }
     }
 

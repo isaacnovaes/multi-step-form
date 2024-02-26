@@ -45,12 +45,12 @@ export class PickAddonsComponent implements OnInit {
 
     back(): void {
         this.saveAddons();
-        this.router.navigate([RoutePath.planSelection]);
+        this.router.navigate([RoutePath.PlanSelection]);
     }
 
     next(): void {
         this.saveAddons();
-        this.router.navigate([RoutePath.summary]);
+        this.router.navigate([RoutePath.Summary]);
     }
 
     private saveAddons(): void {

@@ -57,7 +57,7 @@ export class PersonalInfoComponent implements OnInit, OnDestroy {
 
         if (name && email && phone) {
             this.personalInfoService.addPersonalInfo({ name, email, phone });
-            this.router.navigate([RoutePath.planSelection]);
+            this.router.navigate([RoutePath.PlanSelection]);
         }
     }
 

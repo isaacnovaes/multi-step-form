@@ -7,5 +7,12 @@
     >
         Go Back
     </button>
-    <button class="next" type="button" (click)="onNext()">Next Step</button>
+    <button
+        class="next"
+        [class.confirm]="isConfirm"
+        type="button"
+        (click)="onNext()"
+    >
+        {{ isConfirm ? 'Confirm' : 'Next Step' }}
+    </button>
 </div>

@@ -10,20 +10,20 @@ interface HeadingDetails {
 }
 
 const routeToHeadingDetails: Record<RoutePath, HeadingDetails> = {
-    [RoutePath.personalInfo]: {
+    [RoutePath.PersonalInfo]: {
         heading: 'Personal info',
         description:
             'Please provide your name, email address, and phone number.',
     },
-    [RoutePath.planSelection]: {
+    [RoutePath.PlanSelection]: {
         heading: 'Select your plan',
         description: 'You have the option of monthly or billing.',
     },
-    [RoutePath.pickAddons]: {
+    [RoutePath.PickAddons]: {
         heading: 'Pick add-ons',
         description: 'Add-ons help enhance your gaming experience.',
     },
-    [RoutePath.summary]: {
+    [RoutePath.Summary]: {
         heading: 'Finishing up',
         description: 'Double-check everything looks OK before confirming.',
     },

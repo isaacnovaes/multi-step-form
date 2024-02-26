@@ -6,10 +6,10 @@ import { RoutePath } from './global.defs';
 export class RouteUtils {
     routeUrlToStep(url: RoutePath): number {
         const urlToStep: Record<RoutePath, number> = {
-            [RoutePath.personalInfo]: 1,
-            [RoutePath.planSelection]: 2,
-            [RoutePath.pickAddons]: 3,
-            [RoutePath.summary]: 4,
+            [RoutePath.PersonalInfo]: 1,
+            [RoutePath.PlanSelection]: 2,
+            [RoutePath.PickAddons]: 3,
+            [RoutePath.Summary]: 4,
         };
 
         return urlToStep[url] ?? INITIAL_STEP;
