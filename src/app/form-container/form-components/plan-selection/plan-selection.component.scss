@@ -128,3 +128,21 @@
         }
     }
 }
+
+@media screen and (min-width: 1000px) {
+    .container {
+        display: grid;
+        place-items: center;
+        height: 100dvh;
+        background-color: #edf4fe;
+
+        .inner-container {
+            display: flex;
+            justify-content: space-between;
+            border-radius: 10px;
+            position: relative;
+            background-color: #fff;
+            padding: 15px;
+        }
+    }
+}

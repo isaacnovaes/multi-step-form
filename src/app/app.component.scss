@@ -18,3 +18,19 @@
         height: 100dvh;
     }
 }
+
+@media screen and (min-width: 1000px) {
+    .app {
+        position: static;
+
+        &__mobile-bg {
+            display: none;
+        }
+
+        &__container {
+            position: static;
+
+        }
+    }
+
+}

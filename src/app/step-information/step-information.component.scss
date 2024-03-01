@@ -8,20 +8,66 @@
     margin-inline: auto;
     padding-block: var(--step-size);
 
-    .step {
-        display: grid;
-        place-items: center;
-        width: var(--step-size);
-        height: var(--step-size);
-        border-radius: 50%;
-        border: 1px solid #f4f7ff;
-        color: #f4f7ff;
-        transition: 300ms all ease-in-out;
-    }
+    .container {
+        .step {
+            display: grid;
+            place-items: center;
+            width: var(--step-size);
+            height: var(--step-size);
+            border-radius: 50%;
+            border: 1px solid #f4f7ff;
+            color: #f4f7ff;
+            transition: 300ms all ease-in-out;
 
-    .selected {
-        border-color: #bbddf6;
-        background-color: #bbddf6;
-        color: #0c3553;
+            &.selected {
+                border-color: #bbddf6;
+                background-color: #bbddf6;
+                color: #0c3553;
+            }
+        }
+
+        .step-description {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .step-information {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        column-gap: normal;
+        row-gap: 35px;
+        background-image: url('/assets/images/bg-sidebar-desktop.svg');
+        background-size: cover;
+        width: 274px;
+        height: 568px;
+        padding-left: 20px;
+        --step-size: 35px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 20px;
+
+            .step-description {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                font-size: 0.88rem;
+
+                .step-name {
+                    color: #a4a4ac;
+                }
+
+                .description {
+                    color: #fff;
+                }
+            }
+        }
     }
 }

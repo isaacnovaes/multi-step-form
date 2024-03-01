@@ -46,3 +46,17 @@
         visibility: hidden;
     }
 }
+
+@media screen and (min-width: 1000px) {
+    .footer {
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+        left: 320px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: auto;
+        padding: 15px 0;
+    }
+}

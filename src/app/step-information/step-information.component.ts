@@ -11,11 +11,33 @@ import { STEPS } from '../shared/constants';
     styleUrl: './step-information.component.scss',
 })
 export class StepInformationComponent implements OnInit, OnDestroy {
-    protected readonly STEPS = STEPS;
-
     currentStep: number | undefined = undefined;
 
     urlSubscription: Subscription | undefined = undefined;
+
+    protected readonly STEPS = STEPS;
+
+    protected readonly stepDescription: Record<
+        number,
+        Record<'name' | 'description', string>
+    > = {
+        1: {
+            name: 'Step 1',
+            description: 'YOUR INFO',
+        },
+        2: {
+            name: 'Step 2',
+            description: 'SELECT PLAN',
+        },
+        3: {
+            name: 'Step 3',
+            description: 'ADD-ONS',
+        },
+        4: {
+            name: 'Step 4',
+            description: 'SUMMARY',
+        },
+    };
 
     constructor(
         private readonly routeUtils: RouteUtils,

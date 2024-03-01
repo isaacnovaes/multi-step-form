@@ -1,86 +1,109 @@
-<step-information></step-information>
-<form-container>
-    <form-header></form-header>
-    <div
-        *ngIf="planSelectionService.planSelection$ | async as selectedPlan"
-        class="summary"
-    >
-        <div class="general-data-container">
-            <div class="plan-container">
-                <div class="plan">
-                    <h3>
-                        {{ selectedPlan.plan | titlecase }} ({{
-                            selectedPlan.monthly ? 'Monthly' : 'Yearly'
-                        }})
-                    </h3>
-                    <a [routerLink]="['/', RoutePath.PlanSelection]">Change</a>
-                </div>
-                <div
-                    class="plan-price"
-                    *ngIf="
-                        planPricing[selectedPlan.plan][
-                            selectedPlan.monthly ? 'monthly' : 'yearly'
-                        ] as planPrice
-                    "
-                >
-                    {{ planPrice | displayPrice: selectedPlan.monthly : false }}
-                </div>
-            </div>
-            <ng-container *ngIf="hasAddons">
-                <ng-container
-                    *ngIf="addonsService.addons$ | async as selectedAddons"
-                >
-                    <div class="divider"></div>
-                    <div class="addons-container">
-                        <div
-                            class="addon"
-                            *ngIf="
-                                selectedAddons.onlineService as onlineService
-                            "
-                        >
-                            <span>Online service</span>
-                            <span>{{
-                                addonPricing.onlineService[
-                                    selectedPlan.monthly ? 'monthly' : 'yearly'
-                                ] | displayPrice: selectedPlan.monthly
-                            }}</span>
+<div class="container">
+    <div class="inner-container">
+        <step-information></step-information>
+        <form-container>
+            <form-header></form-header>
+            <div
+                *ngIf="
+                    planSelectionService.planSelection$ | async as selectedPlan
+                "
+                class="summary"
+            >
+                <div class="general-data-container">
+                    <div class="plan-container">
+                        <div class="plan">
+                            <h3>
+                                {{ selectedPlan.plan | titlecase }} ({{
+                                    selectedPlan.monthly ? 'Monthly' : 'Yearly'
+                                }})
+                            </h3>
+                            <a [routerLink]="['/', RoutePath.PlanSelection]"
+                                >Change</a
+                            >
                         </div>
                         <div
-                            class="addon"
-                            *ngIf="selectedAddons.largeStorage as largeStorage"
-                        >
-                            <span>Large storage</span>
-                            <span>{{
-                                addonPricing.largeStorage[
-                                    selectedPlan.monthly ? 'monthly' : 'yearly'
-                                ] | displayPrice: selectedPlan.monthly
-                            }}</span>
-                        </div>
-                        <div
-                            class="addon"
+                            class="plan-price"
                             *ngIf="
-                                selectedAddons.customizableProfile as customizableProfile
+                                planPricing[selectedPlan.plan][
+                                    selectedPlan.monthly ? 'monthly' : 'yearly'
+                                ] as planPrice
                             "
                         >
-                            <span>Customizable profile</span>
-                            <span>{{
-                                addonPricing.customizableProfile[
-                                    selectedPlan.monthly ? 'monthly' : 'yearly'
-                                ] | displayPrice: selectedPlan.monthly
-                            }}</span>
+                            {{
+                                planPrice
+                                    | displayPrice: selectedPlan.monthly : false
+                            }}
                         </div>
                     </div>
-                </ng-container>
-            </ng-container>
-        </div>
-        <div class="total-container">
-            <span
-                >Total ({{ selectedPlan.monthly ? 'per month' : 'per year' }})
-            </span>
-            <span>{{
-                total | displayPrice: selectedPlan.monthly : false
-            }}</span>
-        </div>
+                    <ng-container *ngIf="hasAddons">
+                        <ng-container
+                            *ngIf="
+                                addonsService.addons$ | async as selectedAddons
+                            "
+                        >
+                            <div class="divider"></div>
+                            <div class="addons-container">
+                                <div
+                                    class="addon"
+                                    *ngIf="
+                                        selectedAddons.onlineService as onlineService
+                                    "
+                                >
+                                    <span>Online service</span>
+                                    <span>{{
+                                        addonPricing.onlineService[
+                                            selectedPlan.monthly
+                                                ? 'monthly'
+                                                : 'yearly'
+                                        ] | displayPrice: selectedPlan.monthly
+                                    }}</span>
+                                </div>
+                                <div
+                                    class="addon"
+                                    *ngIf="
+                                        selectedAddons.largeStorage as largeStorage
+                                    "
+                                >
+                                    <span>Large storage</span>
+                                    <span>{{
+                                        addonPricing.largeStorage[
+                                            selectedPlan.monthly
+                                                ? 'monthly'
+                                                : 'yearly'
+                                        ] | displayPrice: selectedPlan.monthly
+                                    }}</span>
+                                </div>
+                                <div
+                                    class="addon"
+                                    *ngIf="
+                                        selectedAddons.customizableProfile as customizableProfile
+                                    "
+                                >
+                                    <span>Customizable profile</span>
+                                    <span>{{
+                                        addonPricing.customizableProfile[
+                                            selectedPlan.monthly
+                                                ? 'monthly'
+                                                : 'yearly'
+                                        ] | displayPrice: selectedPlan.monthly
+                                    }}</span>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <div class="total-container">
+                    <span
+                        >Total ({{
+                            selectedPlan.monthly ? 'per month' : 'per year'
+                        }})
+                    </span>
+                    <span>{{
+                        total | displayPrice: selectedPlan.monthly : false
+                    }}</span>
+                </div>
+            </div>
+            <form-footer (back)="back()" (next)="next()"></form-footer>
+        </form-container>
     </div>
-    <form-footer (back)="back()" (next)="next()"></form-footer>
-</form-container>
+</div>

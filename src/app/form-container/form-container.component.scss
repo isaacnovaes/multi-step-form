@@ -5,3 +5,11 @@
     background-color: #fff;
     border-radius: 15px;
 }
+
+@media screen and (min-width: 1000px) {
+    .form-container {
+        width: 600px;
+        padding: 25px;
+        border-radius: 15px;
+    }
+}
