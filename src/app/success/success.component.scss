@@ -1,0 +1,38 @@
+.success-container {
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 100vh;
+
+    .card {
+        width: 80%;
+        max-width: 600px;
+        margin-inline: 20%;
+        border-radius: 10px;
+        padding: 80px 25px;
+        background-color: #fff;
+    }
+
+    .success {
+        display: grid;
+        place-items: center;
+
+        .image {
+        }
+
+        > h2 {
+            color: #143258;
+            font-size: 2rem;
+            font-weight: var(--big-font);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        > p {
+            color: #acacb8;
+            font-weight: var(--medium-font);
+            text-align: center;
+            line-height: 1.75;
+        }
+    }
+}

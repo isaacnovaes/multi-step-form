@@ -23,7 +23,7 @@
             </div>
             <h2>Thank you!</h2>
             <p *ngIf="personalInfoService.personalInfo$ | async as person">
-                {{ person.name | personName }}, thanks for confirming your
+                {{ person.name | personFirstName }}, thanks for confirming your
                 subscription! We hope you have fun using our platform. If you
                 ever needed support, please feel free to email us at
                 support&#64;loremgaming.com

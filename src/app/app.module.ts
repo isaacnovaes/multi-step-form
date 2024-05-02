@@ -6,6 +6,7 @@ import { FormContainerComponent } from './form-container/form-container.componen
 import { FormFooterComponent } from './form-container/form-footer/form-footer.component';
 import { FormHeaderComponent } from './form-container/form-header/form-header.component';
 import { NgModule } from '@angular/core';
+import { PersonFirstNamePipe } from './success/person-first-name.pipe';
 import { PersonalInfoComponent } from './form-container/form-components/personal-info/personal-info.component';
 import { PickAddonsComponent } from './form-container/form-components/pick-addons/pick-addons.component';
 import { PlanSelectionComponent } from './form-container/form-components/plan-selection/plan-selection.component';
@@ -13,7 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StepInformationComponent } from './step-information/step-information.component';
 import { SuccessComponent } from './success/success.component';
 import { SummaryComponent } from './form-container/form-components/summary/summary.component';
-import { PersonNamePipe } from './success/person-name.pipe';
 
 @NgModule({
     declarations: [
@@ -28,7 +28,7 @@ import { PersonNamePipe } from './success/person-name.pipe';
         SummaryComponent,
         DisplayPricePipe,
         SuccessComponent,
-        PersonNamePipe,
+        PersonFirstNamePipe,
     ],
     imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
     bootstrap: [AppComponent],
