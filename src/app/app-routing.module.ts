@@ -29,6 +29,7 @@ export const routes: Routes = [
         path: RoutePath.Summary,
         title: 'Summary',
         component: SummaryComponent,
+        canActivate: [SuccessGuard],
     },
     {
         path: 'success',

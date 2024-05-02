@@ -69,6 +69,18 @@ export class SummaryComponent implements OnInit {
             this.addonsService.addons$.value ?? {},
         ).some((value) => value);
 
+        this.calculateTotal();
+    }
+
+    back(): void {
+        this.router.navigate([RoutePath.PickAddons]);
+    }
+
+    next(): void {
+        this.router.navigate(['success']);
+    }
+
+    private calculateTotal(): void {
         const plan = this.planSelectionService.planSelection$.value;
 
         if (!plan) {
@@ -105,13 +117,5 @@ export class SummaryComponent implements OnInit {
                     ];
             }
         }
-    }
-
-    back(): void {
-        this.router.navigate([RoutePath.PickAddons]);
-    }
-
-    next(): void {
-        this.router.navigate(['success']);
     }
 }

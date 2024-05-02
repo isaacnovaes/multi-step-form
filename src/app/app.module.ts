@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StepInformationComponent } from './step-information/step-information.component';
 import { SuccessComponent } from './success/success.component';
 import { SummaryComponent } from './form-container/form-components/summary/summary.component';
+import { PersonNamePipe } from './success/person-name.pipe';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { SummaryComponent } from './form-container/form-components/summary/summa
         SummaryComponent,
         DisplayPricePipe,
         SuccessComponent,
+        PersonNamePipe,
     ],
     imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
     bootstrap: [AppComponent],
